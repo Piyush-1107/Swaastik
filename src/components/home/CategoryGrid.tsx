@@ -97,15 +97,14 @@ export function CategoryGrid() {
   }, [])
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 sm:py-12 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-secondary mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3">
             Shop by Category
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our curated collection of authentic Indian jewelry, 
-            each piece crafted with precision and certified for purity.
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+            Explore our curated collection of authentic Indian jewelry, each piece crafted with precision.
           </p>
         </div>
 
@@ -116,7 +115,7 @@ export function CategoryGrid() {
               href={`/category/${category.slug}`}
               className="group"
             >
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-64">
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-48 sm:h-56 lg:h-64">
                 {/* Category Image - Product image or gradient fallback */}
                 {category.productImage ? (
                   <img
@@ -166,8 +165,8 @@ export function CategoryGrid() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-12">
-          <Button asChild size="lg" className="px-8">
+        <div className="text-center mt-8 sm:mt-10">
+          <Button asChild size="lg" className="px-6 sm:px-8">
             <Link href="/products">
               View All Products
             </Link>

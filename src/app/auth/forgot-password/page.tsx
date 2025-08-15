@@ -37,21 +37,21 @@ export default function ForgotPasswordPage() {
 
   if (sent) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
+      <div className="bg-gradient-to-br from-primary/5 to-secondary/5 flex items-start justify-center p-4 pt-4 sm:pt-8 pb-8">
         <Card className="w-full max-w-md mx-auto">
-          <CardHeader className="text-center">
-            <div className="mx-auto mb-4 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-              <Send className="h-8 w-8 text-green-600" />
+          <CardHeader className="text-center pb-4 sm:pb-6">
+            <div className="mx-auto mb-3 sm:mb-4 w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <Send className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
             </div>
-            <CardTitle className="text-2xl text-secondary">
+            <CardTitle className="text-xl sm:text-2xl text-secondary">
               Email Sent
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-sm sm:text-base">
               Check your email for password reset instructions
             </CardDescription>
           </CardHeader>
           
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-3 sm:space-y-4 pt-0">
             <div className="text-center space-y-2">
               <p className="text-sm text-muted-foreground">
                 We've sent password reset instructions to <strong>{email}</strong>
@@ -77,20 +77,20 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
+    <div className="bg-gradient-to-br from-primary/5 to-secondary/5 flex items-start justify-center p-4 pt-4 sm:pt-8 pb-8">
       <Card className="w-full max-w-md mx-auto">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-secondary">
+        <CardHeader className="text-center pb-4 sm:pb-6">
+          <CardTitle className="text-xl sm:text-2xl text-secondary">
             Reset Password
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-sm sm:text-base">
             Enter your email address and we'll send you a reset link
           </CardDescription>
         </CardHeader>
         
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
+        <CardContent className="pt-0">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+            <div className="space-y-1 sm:space-y-2">
               <label htmlFor="email" className="text-sm font-medium">
                 Email Address
               </label>
@@ -102,7 +102,7 @@ export default function ForgotPasswordPage() {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 h-10 sm:h-11"
                   required
                 />
               </div>
@@ -110,14 +110,14 @@ export default function ForgotPasswordPage() {
 
             <Button
               type="submit"
-              className="w-full"
+              className="w-full h-10 sm:h-11"
               disabled={loading}
             >
               {loading ? 'Sending...' : 'Send Reset Link'}
             </Button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="mt-4 sm:mt-6 text-center">
             <Link 
               href="/auth" 
               className="inline-flex items-center text-sm text-primary hover:underline"

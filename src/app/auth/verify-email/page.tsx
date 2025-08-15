@@ -31,21 +31,21 @@ export default function VerifyEmailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
+    <div className="bg-gradient-to-br from-primary/5 to-secondary/5 flex items-start justify-center p-4 pt-4 sm:pt-8 pb-8">
       <Card className="w-full max-w-md mx-auto">
-        <CardHeader className="text-center">
-          <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-            <Mail className="h-8 w-8 text-primary" />
+        <CardHeader className="text-center pb-4 sm:pb-6">
+          <div className="mx-auto mb-3 sm:mb-4 w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center">
+            <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
           </div>
-          <CardTitle className="text-2xl text-secondary">
+          <CardTitle className="text-xl sm:text-2xl text-secondary">
             Check Your Email
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-sm sm:text-base">
             We've sent a verification link to your email address
           </CardDescription>
         </CardHeader>
         
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-3 sm:space-y-4 pt-0">
           <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground">
               Please check your email and click the verification link to activate your account.
@@ -59,7 +59,7 @@ export default function VerifyEmailPage() {
             onClick={resendVerification}
             disabled={loading}
             variant="outline"
-            className="w-full"
+            className="w-full h-10 sm:h-11"
           >
             <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
             Resend Verification Email

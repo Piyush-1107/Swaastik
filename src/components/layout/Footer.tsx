@@ -55,8 +55,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-secondary-foreground/80 mb-4 text-sm">
-              Trusted jewelers since 1995, bringing you authentic, 
-              BIS hallmarked jewelry with timeless elegance and unmatched quality.
+              Manufacturer of premium Gold and Diamond Jewellery located in Gorakhpur. 
+              Led by Abhishek Kumar Gupta, we specialize in authentic, BIS hallmarked jewelry with exceptional craftsmanship.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-white">
@@ -156,22 +156,22 @@ export function Footer() {
                 <MapPin className="h-4 w-4 mt-0.5 text-primary" />
                 <div>
                   <p className="text-secondary-foreground/80">
-                    123 Jewelry Street,<br />
-                    Gold Market, Mumbai - 400001<br />
-                    Maharashtra, India
+                    Nahar Road, Azad Chowk<br />
+                    Rustampur, Gorakhpur<br />
+                    Uttar Pradesh, India
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+919876543210" className="text-secondary-foreground/80 hover:text-white transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919616999929" className="text-secondary-foreground/80 hover:text-white transition-colors">
+                  +91 96169 99929
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:info@swastikgems.com" className="text-secondary-foreground/80 hover:text-white transition-colors">
-                  info@swastikgems.com
+                <a href="mailto:abhishek@swaastikgems.com" className="text-secondary-foreground/80 hover:text-white transition-colors">
+                  abhishek@swaastikgems.com
                 </a>
               </div>
             </div>
@@ -194,7 +194,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm">
             <div className="text-secondary-foreground/80 mb-4 md:mb-0">
-              © {currentYear} Swastik Gems & Jewels. All rights reserved.
+              © {currentYear} Swaastik Gems & Jewels. All rights reserved. | Abhishek Kumar Gupta
             </div>
             <div className="flex space-x-6">
               <Link href="/privacy" className="text-secondary-foreground/80 hover:text-white transition-colors">

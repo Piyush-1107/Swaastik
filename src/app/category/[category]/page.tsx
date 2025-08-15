@@ -75,21 +75,20 @@ export default function CategoryPage() {
   const categoryName = categoryNames[category] || category.charAt(0).toUpperCase() + category.slice(1)
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Page Header */}
-      <div className="text-center mb-12">
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-4">
+    <div className="container mx-auto px-4 py-4 sm:py-6">
+      {/* Compact Header */}
+      <div className="text-center mb-4 sm:mb-6">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-2">
           {categoryName} Collection
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Discover our exquisite {categoryName.toLowerCase()} collection, each piece 
-          crafted with precision and certified with BIS hallmarking.
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+          Discover our {categoryName.toLowerCase()} collection, BIS hallmarked and expertly crafted.
         </p>
       </div>
 
-      {/* Filters and Search */}
-      <div className="bg-white rounded-xl shadow-sm border p-6 mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      {/* Compact Filters */}
+      <div className="bg-white rounded-lg shadow-sm border p-3 sm:p-4 mb-4 sm:mb-6">
+        <div className="space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-3 mb-3">
           {/* Search */}
           <form onSubmit={handleSearch} className="relative">
             <Input
@@ -97,7 +96,7 @@ export default function CategoryPage() {
               placeholder={`Search ${categoryName.toLowerCase()}...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
+              className="pl-10 h-9 text-sm"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           </form>
@@ -109,43 +108,44 @@ export default function CategoryPage() {
               placeholder="Min ₹"
               value={priceRange.min}
               onChange={(e) => setPriceRange(prev => ({ ...prev, min: e.target.value }))}
-              className="w-full"
+              className="w-full h-9 text-sm"
             />
             <Input
               type="number"
               placeholder="Max ₹"
               value={priceRange.max}
               onChange={(e) => setPriceRange(prev => ({ ...prev, max: e.target.value }))}
-              className="w-full"
+              className="w-full h-9 text-sm"
             />
           </div>
 
           {/* Clear Filters */}
-          <Button variant="outline" onClick={clearFilters}>
-            <Filter className="h-4 w-4 mr-2" />
-            Clear Filters
+          <Button variant="outline" onClick={clearFilters} size="sm" className="h-9">
+            <Filter className="h-3 w-3 mr-2" />
+            Clear
           </Button>
         </div>
 
-        <p className="text-sm text-muted-foreground">
-          {loading ? 'Loading...' : `${products.length} ${categoryName.toLowerCase()} found`}
-        </p>
+        {/* Product Count */}
+        <div className="text-sm text-muted-foreground">
+          {loading ? 'Loading...' : `${products.length} items found`}
+        </div>
       </div>
 
       {/* Products Grid */}
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
           {[...Array(8)].map((_, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 animate-pulse">
-              <div className="aspect-square bg-gray-200 rounded-lg mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded mb-2"></div>
+            <div key={index} className="bg-white rounded-lg p-3 sm:p-4 animate-pulse">
+              <div className="aspect-square bg-gray-200 rounded-lg mb-3"></div>
               <div className="h-3 bg-gray-200 rounded mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-20"></div>
+              <div className="h-3 bg-gray-200 rounded mb-2"></div>
+              <div className="h-4 bg-gray-200 rounded w-16"></div>
             </div>
           ))}
         </div>
       ) : products.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}

@@ -60,26 +60,25 @@ export function FeaturedProducts() {
   }
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-8 sm:py-12 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-secondary mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3">
             Featured Collection
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Handpicked pieces from our premium collection, 
-            each crafted with exceptional attention to detail and certified authenticity.
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+            Handpicked pieces from our premium collection, each crafted with exceptional attention to detail.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-10">
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
 
         <div className="text-center">
-          <Button asChild size="lg" variant="outline" className="px-8">
+          <Button asChild size="lg" variant="outline" className="px-6 sm:px-8">
             <Link href="/products">
               View All Products
             </Link>

@@ -4,22 +4,21 @@ import { Card, CardContent } from '@/components/ui/card'
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-4 sm:py-6">
       {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-secondary mb-4">About Swaastik Gems & Jewels</h1>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Manufacturers of premium Gold and Diamond Jewellery, we have been crafting exquisite jewelry pieces 
-          that celebrate life's precious moments. Our commitment to quality, authenticity, and customer 
-          satisfaction has made us a trusted name in the jewelry industry.
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3">About Swaastik Gems & Jewels</h1>
+        <p className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto">
+          Manufacturers of premium Gold and Diamond Jewellery, crafting exquisite jewelry pieces 
+          that celebrate life's precious moments with quality and authenticity.
         </p>
       </div>
 
       {/* Story Section */}
-      <div className="grid lg:grid-cols-2 gap-12 mb-16">
+      <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
         <div>
-          <h2 className="text-3xl font-bold text-secondary mb-6">Our Story</h2>
-          <div className="space-y-4 text-muted-foreground">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary mb-4">Our Story</h2>
+          <div className="space-y-3 text-sm sm:text-base text-muted-foreground">
             <p>
               Founded by Mr. Abhishek Kumar Gupta, Swaastik Gems & Jewels began as a vision 
               to create beautiful, authentic Gold and Diamond Jewellery that people could treasure for generations.
@@ -46,8 +45,8 @@ export default function AboutPage() {
       </div>
 
       {/* Values Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-secondary text-center mb-8">Our Core Values</h2>
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary text-center mb-6">Our Core Values</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="text-center">
             <CardContent className="pt-6">
@@ -92,8 +91,8 @@ export default function AboutPage() {
       </div>
 
       {/* Team Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-secondary text-center mb-8">Leadership</h2>
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary text-center mb-6">Leadership</h2>
         <div className="flex justify-center">
           <Card className="text-center max-w-md">
             <CardContent className="pt-6">

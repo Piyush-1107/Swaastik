@@ -78,21 +78,21 @@ export default function ProductsPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Page Header */}
-      <div className="text-center mb-12">
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-4">
+    <div className="container mx-auto px-4 py-4 sm:py-6">
+      {/* Compact Header */}
+      <div className="text-center mb-4 sm:mb-6">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-2">
           Our Jewelry Collection
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Discover our exquisite range of handcrafted jewelry, each piece 
-          certified with BIS hallmarking and crafted with precision.
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+          Discover authentic handcrafted jewelry, 100% BIS hallmarked for your peace of mind.
         </p>
       </div>
 
-      {/* Filters and Search */}
-      <div className="bg-white rounded-xl shadow-sm border p-6 mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+      {/* Compact Filters */}
+      <div className="bg-white rounded-lg shadow-sm border p-3 sm:p-4 mb-4 sm:mb-6">
+        {/* Mobile-first layout */}
+        <div className="space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-3 mb-3">
           {/* Search */}
           <form onSubmit={handleSearch} className="relative">
             <Input
@@ -100,7 +100,7 @@ export default function ProductsPage() {
               placeholder="Search jewelry..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
+              className="pl-10 h-9 text-sm"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           </form>
@@ -109,7 +109,7 @@ export default function ProductsPage() {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-3 py-2 border border-input rounded-md bg-background"
+            className="px-3 py-2 border border-input rounded-md bg-background h-9 text-sm"
           >
             {categories.map((category) => (
               <option key={category.value} value={category.value}>
@@ -125,44 +125,46 @@ export default function ProductsPage() {
               placeholder="Min ₹"
               value={priceRange.min}
               onChange={(e) => setPriceRange(prev => ({ ...prev, min: e.target.value }))}
-              className="w-full"
+              className="w-full h-9 text-sm"
             />
             <Input
               type="number"
               placeholder="Max ₹"
               value={priceRange.max}
               onChange={(e) => setPriceRange(prev => ({ ...prev, max: e.target.value }))}
-              className="w-full"
+              className="w-full h-9 text-sm"
             />
           </div>
 
           {/* Clear Filters */}
-          <Button variant="outline" onClick={clearFilters}>
-            <Filter className="h-4 w-4 mr-2" />
-            Clear Filters
+          <Button variant="outline" onClick={clearFilters} size="sm" className="h-9">
+            <Filter className="h-3 w-3 mr-2" />
+            Clear
           </Button>
         </div>
 
-        {/* View Mode Toggle */}
-        <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">
-            {loading ? 'Loading...' : `${products.length} products found`}
+        {/* Compact Stats and View Toggle */}
+        <div className="flex items-center justify-between text-sm">
+          <p className="text-muted-foreground">
+            {loading ? 'Loading...' : `${products.length} items`}
           </p>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Button
               variant={viewMode === 'grid' ? 'default' : 'outline'}
               size="sm"
               onClick={() => setViewMode('grid')}
+              className="h-8 w-8 p-0"
             >
-              <Grid className="h-4 w-4" />
+              <Grid className="h-3 w-3" />
             </Button>
             <Button
               variant={viewMode === 'list' ? 'default' : 'outline'}
               size="sm"
               onClick={() => setViewMode('list')}
+              className="h-8 w-8 p-0"
             >
-              <List className="h-4 w-4" />
+              <List className="h-3 w-3" />
             </Button>
           </div>
         </div>

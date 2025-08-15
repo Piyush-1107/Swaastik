@@ -204,9 +204,10 @@ The project can be deployed to any platform that supports Next.js:
 
 **Swaastik Gems & Jewels**
 - **Owner**: Abhishek Kumar Gupta
-- **Contact**: +91 98765 43210
-- **Email**: contact@swaastikgems.com
-- **Specialization**: Traditional and contemporary jewelry designs
+- **Contact**: +91 96169 99929
+- **Email**: abhishek@swaastikgems.com
+- **Address**: Nahar Road, Azad Chowk, Rustampur, Gorakhpur, Uttar Pradesh
+- **Specialization**: Manufacturer of Gold and Diamond Jewellery
 
 ## 🤝 Contributing
 
@@ -254,8 +255,9 @@ This project is created for Swaastik Gems & Jewels. All rights reserved.
 ## 📞 Support
 
 For any questions or support, please contact:
-- **Email**: contact@swaastikgems.com
-- **Phone**: +91 98765 43210
+- **Email**: abhishek@swaastikgems.com
+- **Phone**: +91 96169 99929
+- **Address**: Nahar Road, Azad Chowk, Rustampur, Gorakhpur, Uttar Pradesh
 - **GitHub Issues**: [Create an issue](https://github.com/Piyush-1107/Swaastik/issues)
 
 ---

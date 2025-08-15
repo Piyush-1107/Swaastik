@@ -108,11 +108,11 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
 
   return (
     <Card className="w-full max-w-md mx-auto">
-      <CardHeader className="text-center">
-        <CardTitle className="text-2xl text-secondary">
+      <CardHeader className="text-center pb-4 sm:pb-6">
+        <CardTitle className="text-xl sm:text-2xl text-secondary">
           {mode === 'login' ? 'Welcome Back' : 'Create Account'}
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-sm sm:text-base">
           {mode === 'login' 
             ? 'Sign in to your Swastik Gems account' 
             : 'Join the Swastik Gems family'
@@ -120,11 +120,11 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
         </CardDescription>
       </CardHeader>
       
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <CardContent className="pt-0">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
           {mode === 'signup' && (
             <>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <label htmlFor="fullName" className="text-sm font-medium">
                   Full Name
                 </label>
@@ -137,13 +137,13 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
                     placeholder="Enter your full name"
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="pl-10"
+                    className="pl-10 h-10 sm:h-11"
                     required
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <label htmlFor="phone" className="text-sm font-medium">
                   Phone Number
                 </label>
@@ -156,7 +156,7 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
                     placeholder="Enter your phone number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="pl-10"
+                    className="pl-10 h-10 sm:h-11"
                     required
                   />
                 </div>
@@ -164,7 +164,7 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
             </>
           )}
 
-          <div className="space-y-2">
+          <div className="space-y-1 sm:space-y-2">
             <label htmlFor="email" className="text-sm font-medium">
               Email Address
             </label>
@@ -177,13 +177,13 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
-                className="pl-10"
+                className="pl-10 h-10 sm:h-11"
                 required
               />
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1 sm:space-y-2">
             <label htmlFor="password" className="text-sm font-medium">
               Password
             </label>
@@ -196,7 +196,7 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={handleChange}
-                className="pl-10 pr-10"
+                className="pl-10 pr-10 h-10 sm:h-11"
                 required
               />
               <button
@@ -210,7 +210,7 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
           </div>
 
           {mode === 'signup' && (
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <label htmlFor="confirmPassword" className="text-sm font-medium">
                 Confirm Password
               </label>
@@ -223,7 +223,7 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
                   placeholder="Confirm your password"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className="pl-10"
+                  className="pl-10 h-10 sm:h-11"
                   required
                 />
               </div>
@@ -243,14 +243,14 @@ export function AuthForm({ mode, onToggleMode, redirectTo = '/' }: AuthFormProps
 
           <Button
             type="submit"
-            className="w-full"
+            className="w-full h-10 sm:h-11"
             disabled={loading}
           >
             {loading ? 'Processing...' : (mode === 'login' ? 'Sign In' : 'Create Account')}
           </Button>
         </form>
 
-        <div className="mt-6 text-center">
+        <div className="mt-4 sm:mt-6 text-center">
           <p className="text-sm text-muted-foreground">
             {mode === 'login' ? "Don't have an account?" : 'Already have an account?'}
             <button
