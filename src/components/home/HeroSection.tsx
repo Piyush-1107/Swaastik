@@ -24,7 +24,7 @@ export function HeroSection() {
               100% BIS hallmarked gold and silver pieces that celebrate timeless elegance.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 relative z-30">
               <Button asChild size="lg" className="text-lg px-8 py-3">
                 <Link href="/products">
                   Explore Collection

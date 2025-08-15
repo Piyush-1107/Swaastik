@@ -42,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
       <Link href={`/products/${product.slug}`}>
-        <div className="relative overflow-hidden" style={{ aspectRatio: '1/1', width: '100%' }}>
+        <div className="relative overflow-hidden aspect-square">
           {/* Product Image */}
           <ProductImage
             src={product.images && product.images.length > 0 ? product.images[0] : undefined}
@@ -50,7 +50,7 @@ export function ProductCard({ product }: ProductCardProps) {
             width={400}
             height={400}
             className="group-hover:scale-110 transition-transform duration-300 object-cover w-full h-full"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           />
 
           {/* Badges */}
@@ -101,58 +101,58 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
 
-      <CardContent className="p-4">
+      <CardContent className="p-3 sm:p-4">
         <Link href={`/products/${product.slug}`}>
-          <div className="space-y-2">
+          <div className="space-y-1.5 sm:space-y-2">
             {/* Category */}
             <p className="text-xs text-primary font-medium uppercase tracking-wider">
               {product.category}
             </p>
 
             {/* Product name */}
-            <h3 className="font-semibold text-secondary group-hover:text-primary transition-colors line-clamp-2">
+            <h3 className="font-semibold text-secondary group-hover:text-primary transition-colors line-clamp-2 text-sm sm:text-base leading-tight">
               {product.name}
             </h3>
 
-            {/* Specifications */}
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            {/* Specifications - Mobile optimized */}
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <span>{product.specifications.metal}</span>
               <span>•</span>
               <span>{product.specifications.purity}</span>
-              <span>•</span>
-              <span>{product.specifications.weight}</span>
+              <span className="hidden sm:inline">•</span>
+              <span className="hidden sm:inline">{product.specifications.weight}</span>
             </div>
 
-            {/* Rating */}
+            {/* Rating - Compact for mobile */}
             {product.reviews.length > 0 && (
               <div className="flex items-center gap-2">
                 <div className="flex items-center">
-                  <Star className="w-4 h-4 fill-primary text-primary" />
-                  <span className="text-sm font-medium ml-1">{averageRating.toFixed(1)}</span>
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-primary text-primary" />
+                  <span className="text-xs sm:text-sm font-medium ml-1">{averageRating.toFixed(1)}</span>
                 </div>
-                <span className="text-xs text-muted-foreground">
+                <span className="text-xs text-muted-foreground hidden sm:inline">
                   ({product.reviews.length} review{product.reviews.length !== 1 ? 's' : ''})
                 </span>
               </div>
             )}
 
-            {/* Price */}
-            <div className="flex items-center justify-between">
-              <p className="text-lg font-bold text-secondary">
+            {/* Price and stones - Mobile optimized layout */}
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-base sm:text-lg font-bold text-secondary">
                 {formatPrice(product.price)}
               </p>
               {product.specifications.stones.length > 0 && (
-                <div className="flex gap-1">
+                <div className="flex gap-1 flex-wrap">
                   {product.specifications.stones.slice(0, 2).map((stone, index) => (
                     <span
                       key={index}
-                      className="text-xs bg-muted px-2 py-1 rounded-full"
+                      className="text-xs bg-muted px-1.5 py-0.5 rounded-full"
                     >
                       {stone}
                     </span>
                   ))}
                   {product.specifications.stones.length > 2 && (
-                    <span className="text-xs bg-muted px-2 py-1 rounded-full">
+                    <span className="text-xs bg-muted px-1.5 py-0.5 rounded-full">
                       +{product.specifications.stones.length - 2}
                     </span>
                   )}
@@ -163,14 +163,15 @@ export function ProductCard({ product }: ProductCardProps) {
         </Link>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-3 sm:p-4 pt-0">
         <Button
           onClick={handleAddToCart}
           disabled={product.stock === 0}
-          className="w-full"
+          className="w-full text-sm"
           variant={product.stock === 0 ? "secondary" : "default"}
+          size="sm"
         >
-          <ShoppingCart className="w-4 h-4 mr-2" />
+          <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
           {product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
         </Button>
       </CardFooter>

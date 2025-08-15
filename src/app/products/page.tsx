@@ -170,21 +170,21 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
           {[...Array(8)].map((_, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 animate-pulse">
-              <div className="aspect-square bg-gray-200 rounded-lg mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded mb-2"></div>
+            <div key={index} className="bg-white rounded-lg p-3 sm:p-4 animate-pulse">
+              <div className="aspect-square bg-gray-200 rounded-lg mb-3"></div>
               <div className="h-3 bg-gray-200 rounded mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-20"></div>
+              <div className="h-3 bg-gray-200 rounded mb-2"></div>
+              <div className="h-4 bg-gray-200 rounded w-16"></div>
             </div>
           ))}
         </div>
       ) : products.length > 0 ? (
-        <div className={`grid gap-6 ${
+        <div className={`gap-3 sm:gap-4 lg:gap-6 ${
           viewMode === 'grid' 
-            ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
-            : 'grid-cols-1'
+            ? 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' 
+            : 'grid grid-cols-1'
         }`}>
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />

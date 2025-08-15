@@ -44,13 +44,13 @@ export function FeaturedProducts() {
               Featured Collection
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {[...Array(4)].map((_, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 animate-pulse">
-                <div className="aspect-square bg-gray-200 rounded-lg mb-4"></div>
-                <div className="h-4 bg-gray-200 rounded mb-2"></div>
+              <div key={index} className="bg-white rounded-lg p-3 sm:p-4 animate-pulse">
+                <div className="aspect-square bg-gray-200 rounded-lg mb-3"></div>
                 <div className="h-3 bg-gray-200 rounded mb-2"></div>
-                <div className="h-4 bg-gray-200 rounded w-20"></div>
+                <div className="h-3 bg-gray-200 rounded mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded w-16"></div>
               </div>
             ))}
           </div>
@@ -72,7 +72,7 @@ export function FeaturedProducts() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-12">
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
